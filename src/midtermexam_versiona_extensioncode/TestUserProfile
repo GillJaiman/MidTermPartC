@@ -1,0 +1,25 @@
+class TestUserProfile:
+    def __init__(self, name, favorite_genre):
+        self.name = name
+        self.favorite_genre = favorite_genre
+
+    def create_profile(self):
+        print(f"User profile for {self.name} created with favorite genre: {self.favorite_genre}")
+
+
+def main():
+    print("Welcome to UserProfile creation!")
+    name = input("Enter your name: ")
+    print("Choose your favorite genre from the list:")
+    genres = ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Horror", "Sci-Fi"]
+    for i, genre in enumerate(genres, start=1):
+        print(f"{i}. {genre}")
+    choice = int(input("Enter the number corresponding to your favorite genre: "))
+    favorite_genre = genres[choice - 1]
+
+    user_profile = TestUserProfile(name, favorite_genre)
+    user_profile.create_profile()
+
+
+if __name__ == "__main__":
+    main()
